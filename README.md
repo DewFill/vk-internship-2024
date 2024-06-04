@@ -42,7 +42,7 @@ ___
 ### MySQLDatabase
 Реализация интерфейса DatabaseInterface для работы с базой данных MySQL.
 ___
-### RedicCache
+### RedisCache
 Реализация интерфейса CacheInterface для работы с кешем Redis.
 ___
 ### CustomerRepository
