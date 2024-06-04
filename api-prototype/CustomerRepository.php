@@ -11,6 +11,11 @@ class CustomerRepository implements CustomerRepositoryInterface
 
     public function getCustomerById($customerId)
     {
-        // Получение данных пользователя по ID
+        $cache = (new RedisCache())->get("user:$customerId");
+        if ($cache === false) {
+            // Получение данных пользователя по ID через БД
+        } else {
+            // Получение данных пользователя по ID через кеш
+        }
     }
 }

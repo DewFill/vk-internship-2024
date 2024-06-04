@@ -11,16 +11,27 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function getProductById($productId)
     {
-        // Получение данных о продукте по ID
+        $cache = (new RedisCache())->get("product:$productId");
+        if ($cache === false) {
+            // Получение данных о продукте через БД
+        } else {
+            // Получение данных о продукте через кеш
+        }
     }
 
     public function getProductVersion($productId)
     {
-        // Получение версии продукта
+        $cache = (new RedisCache())->get("product:$productId");
+        if ($cache === false) {
+            // Получение версии продукта через БД
+        } else {
+            // Получение версии продукта через кеш
+        }
     }
 
     public function updateProductQuantity($productId, $quantity)
     {
         // Обновление количества продукта
+        $cache = (new RedisCache())->set("product:$productId", $quantity);
     }
 }

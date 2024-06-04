@@ -29,6 +29,13 @@ ___
 
 * ```uploadFile($filePath, $fileName, $mimeType)``` - Загрузка файла в S3.
 * ```getFileUrl($fileId)``` - Получение URL файла из S3.
+___
+
+### CacheInterface - Определяет методы для работы с кешем
+
+* ```get(string $key)``` - Получение данных из кеша
+* ```delete(string $key)``` - Удаление данных из кеша
+* ```set(string $key, string $value, int $ttl)``` - Добавление данных в кеш
 
 
 ## Классы
